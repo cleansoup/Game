@@ -1,1 +1,1 @@
-This is an unspecified game at the moment. Therefore, this README is useless.
+This is a pong clone with added networking for 2 players.
