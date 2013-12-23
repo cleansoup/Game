@@ -1,11 +1,9 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
+#include "main.h"
 
 const int SCREEN_WIDTH = 1920;
 const int SCREEN_HEIGHT = 1080;
-
-
-void game_loop(SDL_Window* window);
 
 /**
  * SDL_main used as main as SDL requires.
