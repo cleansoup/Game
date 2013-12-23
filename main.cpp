@@ -9,6 +9,7 @@ void game_loop(SDL_Window* window);
 
 /**
  * SDL_main used as main as SDL requires.
+ * Do NOT change the function signature to maintain SDL compatability
  * Handles initialization and destruction of game resources.
  */
 int main(int argc, char* args[]) {
@@ -18,7 +19,8 @@ int main(int argc, char* args[]) {
 		printf("SDL initialization error: %s\n", SDL_GetError());
 	} else {
 		printf("SDL loaded properly\nSystem Detected: %s\n", SDL_GetPlatform());	
-		window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+		window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+			 SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if(window == NULL) {
 			printf("Window creation error: %s\n", SDL_GetError());
 		} else {
