@@ -16,7 +16,7 @@ int main(int argc, char* args[]) {
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("SDL initialization error: %s\n", SDL_GetError());
 	} else {
-		printf("SDL loaded properly\nSystem Detected: %s\n", SDL_GetPlatform());	
+		printf("SDL loaded properly\nSystem Detected: %s\n", SDL_GetPlatform());
 		window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 			 SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if(window == NULL) {
@@ -42,3 +42,7 @@ void game_loop(SDL_Window* window) {
 			SDL_UpdateWindowSurface(window);
 	}
 }
+void game_init(SDL_Surface* screenSurface) {
+
+}
+
