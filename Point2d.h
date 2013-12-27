@@ -5,6 +5,7 @@ class Point2d {
 		int x;
 		int y;
 	public:
+		Point2d();	
 		Point2d(int x, int y);
 		int getX();
 		int getY();

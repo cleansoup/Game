@@ -1,4 +1,7 @@
 #include "Point2d.h"
+Point2d::Point2d() {
+	
+}
 Point2d::Point2d(int x, int y) {
 	setPos(x, y);
 }
