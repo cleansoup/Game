@@ -5,6 +5,7 @@ class Velocity2d {
 		int velX;
 		int velY;
 	public:
+		Velocity2d();	
 		Velocity2d(int velX, int velY);
 		int getVelX();
 		int getVelY();
