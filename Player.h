@@ -2,10 +2,9 @@ class Player {
 	private:
 		int life;
 		int score;
-		Paddle myPaddle;
+		Paddle* myPaddle;
 	public:
-		Player();
-		Player(int life, int score);
+		Player(int life, int score, int xPos, int yPos);
 		move(Movement movement_data_ );
 			
 

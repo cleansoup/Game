@@ -1,5 +1,8 @@
 #ifndef PUCK_H_INCLUDED
 #define PUCK_H_INCLUDED
+#include "Force2d.h"
+#include "Point2d.h"
+#include "Velocity2d.h"
 class Puck {
 	private:
 		Point2d position;

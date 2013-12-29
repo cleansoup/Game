@@ -1,7 +1,8 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include "main.h"
-#include "Puch.h"
+#include "Puck.h"
+#include <vector>
 
 const int SCREEN_WIDTH = 1920;
 const int SCREEN_HEIGHT = 1080;
@@ -43,14 +44,22 @@ void game_loop(SDL_Window* window) {
 			SDL_UpdateWindowSurface(window);
 	}
 }
+/**
+ * Initializes the game to default values.
+ */
 void game_init(SDL_Surface* screenSurface) {
 	const int xStart = 100;
 	const int yStart = 100;
 	const int xIniVel = 0;
 	const int yIniVel = 0; 
-	Puck aPuck = new Puck(xStart, yStart, xIniVel, yIniVel);
+	Puck* aPuck = new Puck(xStart, yStart, xIniVel, yIniVel);
+	if (aPuck == NULL) {
+		printf("Puck allocation failed");
+	}
 }
+/**
+ * Re-initializes the game to default values.
+ */
 void clear(SDL_Surface* screenSurface) {
 	game_init(screenSurface);
 }
-
