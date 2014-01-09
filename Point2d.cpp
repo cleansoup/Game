@@ -9,9 +9,9 @@ int Point2d::getX() {
 	return x;
 }
 int Point2d::getY() {
-    return y;
+   	return y;
 }
 void Point2d::setPos(int x, int y) {
-    this->x = x;
-    this->y = y;
+   	this->x = x;
+   	this->y = y;
 }
