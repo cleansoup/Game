@@ -1,6 +1,6 @@
 #include "Velocity2d.h"
 Velocity2d::Velocity2d() {
-
+	//do nothing
 }
 Velocity2d::Velocity2d(int velX, int velY) {
     setVel(velX, velY);
