@@ -1,4 +1,4 @@
-#include "Force.h"
+#include "Force2d.h"
 Force2d::Force2d(Mass mass, int accX, int accY) {
         int forceX = mass * accX;
         int forceY = mass * accY;
