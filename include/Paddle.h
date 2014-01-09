@@ -1,3 +1,5 @@
+#ifndef PADDLE_H_INCLUDED
+#define PADDLE_H_INCLUDED
 class Paddle {
 	private:
 		Point2d myPosition;
@@ -8,3 +10,4 @@ class Paddle {
 		void movePosition(MovementVector2d aDirection);
 
 }
+#endif //PADDLE_H_INCLUDED
