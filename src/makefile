@@ -4,9 +4,12 @@ CXX = g++
 SDL_LIB = -L/usr/local/lib -lSDL2 -Wl,-rpath /usr/local/lib/
 SDL_INCLUDE = -I/usr/local/include/SDL2
 
+INC = ../include
+IDIRS = -I$(INC)
+
 CXXOPTIMIZATION = -o
-CXXFLAGS = -Wall -c -std=c++11 $(SDL_INCLUDE)
-LDFLAGS = $(SDL_LIB)
+CXXFLAGS = -Wall -c -std=c++11 $(SDL_INCLUDE) $(IDIRS)
+LDFLAGS = $(SDL_LIB) 
 EXE = Pong_Game
 
 all: $(EXE)

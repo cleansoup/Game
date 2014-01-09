@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include <stdio.h>
 #include "main.h"
-#include "Puch.h"
+#include "Puck.h"
 
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;
@@ -64,7 +64,8 @@ void game_init(SDL_Surface* screenSurface) {
 	const int yStart = 100;
 	const int xIniVel = 0;
 	const int yIniVel = 0; 
-	Puck aPuck = new Puck(xStart, yStart, xIniVel, yIniVel);
+
+	Puck aPuck(xStart, yStart, xIniVel, yIniVel);
 }
 void clear(SDL_Surface* screenSurface) {
 	game_init(screenSurface);
