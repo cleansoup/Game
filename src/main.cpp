@@ -2,10 +2,6 @@
 #include <stdio.h>
 #define _main 	_SDL_main
 #include "main.h"
-#include "Force2d.h"
-#include "Point2d.h"
-#include "Velocity2d.h"
-#include "Puck.h"
 
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;
@@ -53,12 +49,22 @@ void game_loop(SDL_Window* window) {
 
 	SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
 	bool gameOn = true;
+	SDL_Event e;
 	while(gameOn)
 	{
+			while (SDL_PollEvent(&e)){
+				if(e.type == SDL_QUIT)
+					gameOn = false;
+				if(e.type == SDL_KEYDOWN)
+					gameOn = false;
+				if(e.type == SDL_MOUSEBUTTONDOWN)
+					gameOn = false;
+			}
 			//Fill the surface white
 			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
 			//Update the surface
 			SDL_UpdateWindowSurface(window);
+
 	}
 
 }
