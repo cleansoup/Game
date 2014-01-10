@@ -1,6 +1,10 @@
 #include <SDL.h>
 #include <stdio.h>
+#define _main 	_SDL_main
 #include "main.h"
+#include "Force2d.h"
+#include "Point2d.h"
+#include "Velocity2d.h"
 #include "Puck.h"
 
 const int SCREEN_WIDTH = 1280;

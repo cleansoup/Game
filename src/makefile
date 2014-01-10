@@ -10,19 +10,32 @@ INC = ../include
 SDL_INCLUDE = -I/usr/local/include/SDL2
 IDIRS = -I$(INC) $(SDL_INCLUDE)
 
-CXXOPTIMIZATION = -o
-CXXFLAGS = -Wall -c -std=c++11
+_OBJ = main.o Point2d.o Force2d.o Velocity2d.o Puck.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ) )
+ODIR = obj
+
+_DEPS = *.h
+DEPS = $(patsubst %,$(INC)/%,$(_DEPS))
+
+CXXOPTIMIZATION = -Wall -g
+CXXFLAGS = -Wall -std=c++11 $(IDIRS) -g
 EXE = Pong_Game.exe
 
 all: $(EXE)
 	echo All finished
 
-$(EXE): main.o
-	$(CXX) $(CXXOPTIMIZATION) $@ $< $(LDFLAGS)
+$(EXE): $(OBJ)
+	echo Object Files Created
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 
-main.o: main.cpp
-	$(CXX) $(CXXFLAGS) $(IDIRS) $<
+$(ODIR)/%.o: %.cpp $(DEPS)
+	$(CXX) -c $< -o $@ $(CXXFLAGS)
+
+$(OBJ) : | obj
+
+obj:
+	@mkdir -p $@
 
 clean:
-	rm *.o && rm $(EXE)
+	rm -r $(ODIR) && rm -p $(EXE)
 	echo Clean finished

@@ -1,5 +1,10 @@
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
+
+#ifndef PADDLE_H_INCLUDED
+#include "Paddle.h"
+#endif //PADDLE_H_INCLUDED
+
 class Player {
 	private:
 		int life;
