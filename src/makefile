@@ -10,7 +10,7 @@ INC = ../include
 SDL_INCLUDE = -I/usr/local/include/SDL2
 IDIRS = -I$(INC) $(SDL_INCLUDE)
 
-_OBJ = main.o Point2d.o Force2d.o Velocity2d.o Puck.o Paddle.o
+_OBJ = main.o Point2d.o Force2d.o Velocity2d.o Puck.o Paddle.o Global.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ) )
 ODIR = obj
 
