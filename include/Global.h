@@ -14,8 +14,8 @@ class Global{
 
 
 	private:
-		SDL_Renderer* s_renderer = NULL;
-		SDL_Window* s_window = NULL;
+		static SDL_Renderer* s_renderer;
+		static SDL_Window* s_window;
 
 
 };
