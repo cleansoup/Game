@@ -2,6 +2,8 @@
 #include "Point2d.h"
 #include "Velocity2d.h"
 #include "Puck.h"
+#include "Paddle.h"
+#include "Global.h"
 
 void game_loop(SDL_Window* window);
 void game_init(SDL_Surface* screenSurface);

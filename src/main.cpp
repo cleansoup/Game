@@ -3,8 +3,6 @@
 #define _main 	_SDL_main
 #include "main.h"
 
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
 
 /**
  * SDL_main used as main as SDL requires.
@@ -12,31 +10,26 @@ const int SCREEN_HEIGHT = 720;
  * Handles initialization and destruction of game resources.
  */
 int main(int argc, char* args[]) {
-	SDL_Window* window = NULL;
+
 
 	//Initialize standard SDL modules plus video
-	if(SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
+	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("SDL initialization error: %s\n", SDL_GetError());
 	}
 
-	else
-	{
+	else {
 		printf("SDL loaded properly\nSystem Detected: %s\n", SDL_GetPlatform());
-		window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-			 SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
-		if(window == NULL)
-		{
+
+		if(Global::getWindow() == NULL) {
 			printf("Window creation error: %s\n", SDL_GetError());
 		}
-		else
-		{
-			game_loop(window);
+		else {
+			game_loop(Global::getWindow());
 		}
 	}
 
-	SDL_DestroyWindow(window);
+	SDL_DestroyWindow(Global::getWindow());
 	SDL_Quit();
 
 	return 0;
@@ -50,8 +43,7 @@ void game_loop(SDL_Window* window) {
 	SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
 	bool gameOn = true;
 	SDL_Event e;
-	while(gameOn)
-	{
+	while(gameOn) {
 			while (SDL_PollEvent(&e)){
 				if(e.type == SDL_QUIT)
 					gameOn = false;
@@ -62,6 +54,7 @@ void game_loop(SDL_Window* window) {
 			}
 			//Fill the surface white
 			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+			Paddle();
 			//Update the surface
 			SDL_UpdateWindowSurface(window);
 
